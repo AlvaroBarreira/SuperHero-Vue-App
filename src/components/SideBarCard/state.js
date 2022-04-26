@@ -1,0 +1,10 @@
+import { ref, computed } from 'vue'
+
+const collapsed = ref(true)
+const toggleSidebar = () => (collapsed.value = !collapsed.value)
+
+const SIDEBAR_WIDTH = 250
+const SIDEBAR_WIDTH_COLLAPSED = 55
+const sidebarWidth = computed(
+  () => `${collapsed.value ? SIDEBAR_WIDTH_COLLAPSED : SIDEBAR_WIDTH}px`
+)
